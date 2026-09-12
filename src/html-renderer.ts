@@ -1118,6 +1118,9 @@ section.${c}>footer { z-index: 1; }
 		if (elem.id)
 			result.id = elem.id;
 
+		if ((elem as any).runIndex !== undefined)
+			result.setAttribute('data-run-index', String((elem as any).runIndex));
+
 		return result;
 	}
 

@@ -61,6 +61,7 @@ export interface DocumentParserOptions {
 
 export class DocumentParser {
 	options: DocumentParserOptions;
+	private _runIndex = 0;
 
 	constructor(options?: Partial<DocumentParserOptions>) {
 		this.options = {
@@ -741,6 +742,7 @@ export class DocumentParser {
 			}
 		}
 
+		(result as any).runIndex = this._runIndex++;
 		return result;
 	}
 
